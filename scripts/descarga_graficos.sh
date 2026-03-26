@@ -118,6 +118,9 @@ wget -O TSM_M1.gif http://www.cpc.ncep.noaa.gov/products/CDB/CDB_Archive_html/bu
 wget -O TSM_M2.gif http://www.cpc.ncep.noaa.gov/products/CDB/CDB_Archive_html/bulletin_$mes2$anio2/Tropics/figt18.gif
 wget -O TSM_M3.gif http://www.cpc.ncep.noaa.gov/products/CDB/CDB_Archive_html/bulletin_$mes3$anio3/Tropics/figt18.gif
 
+#Imagen RONI BOM (fija)
+wget -O RONI.png https://www.bom.gov.au/clim_data/IDCK000072/rnino_3.4.png
+
 #Imagen Anomalía TSM mensual más actual (fija)
 wget http://www.cpc.ncep.noaa.gov/products/analysis_monitoring/lanina/enso_evolution-status-fcsts-web.pdf
 qpdf enso_evolution-status-fcsts-web.pdf --pages enso_evolution-status-fcsts-web.pdf 7 -- tmp.pdf
@@ -152,7 +155,8 @@ wget -O OLR_M2.gif http://www.cpc.ncep.noaa.gov/products/CDB/CDB_Archive_html/bu
 wget -O OLR_M3.gif http://www.cpc.ncep.noaa.gov/products/CDB/CDB_Archive_html/bulletin_$mes3$anio3/Tropics/figt25.gif
 
 #Imagen IOD (fija) NO ESTÁ FUNCIONANDO BIEN
-wget --no-cache -U "Mozilla" -O IOD.png http://www.bom.gov.au/climate/enso/monitoring/iod1.png
+wget --no-cache -U "Mozilla" -O IOD.png http://www.bom.gov.au/clim_data/IDCK000072/iod1.png
+# http://www.bom.gov.au/climate/enso/monitoring/iod1.png
 # en febrero 2024 http://www.bom.gov.au/clim_data/IDCK000072/iod1.png
 # El otro link sigue andando pero tiene un grafico viejo
 
@@ -285,16 +289,18 @@ wget -O PronoENSO_Anterior.png https://iri.columbia.edu/wp-content/uploads/$anio
 
 # A partir de Junio el modelo de link es este:
 #https://iri.columbia.edu/wp-content/uploads/2024/06/CPCoff_ENSOprobs_062024.png pero es el prono de mayo... 
-#wget -O PronoENSO.png https://iri.columbia.edu/wp-content/uploads/$anio/$cumes/CPCoff_ENSOprobs_$cumes$anio.png
-wget -O PronoENSO.png https://www.cpc.ncep.noaa.gov/products/analysis_monitoring/enso_advisory/figure07.gif
+wget -O PronoENSO.png https://iri.columbia.edu/wp-content/uploads/$anio/$cumes/figure1.png #CPCoff_ENSOprobs_$cumes$anio.png
 
 #Imagen Pluma ENSO (Mes actual puede no estar según en qué fecha se haga la presentación)
+
 # VAN CAMBIANDO LOS LINK SIN MOTIVO!
 # PARA Abril 2023 funciona asi:
 #wget -O Pluma_PronoENSO_MesActual.png https://ensoforecast.iri.columbia.edu/cgi-bin/sst_table_img?month=$cumes'&'year=$nxtanio
-wget -O Pluma_PronoENSO_MesActual.png https://ensoforecast.iri.columbia.edu/cgi-bin/sst_table_img?month=$mes1'&'year=$nxtanio #va con el mes anterior al cumes
-#wget -O Pluma_PronoENSO_MesAnterior.png https://ensoforecast.iri.columbia.edu/cgi-bin/sst_table_img?month=$mes3'&'year=$anio3
-wget -O Pluma_PronoENSO_MesAnterior.png https://www.cpc.ncep.noaa.gov/products/analysis_monitoring/enso_advisory/figure06.gif
+wget -O Pluma_PronoENSO_MesActual.png https://ensoforecast.iri.columbia.edu/cgi-bin/sst_table_img?month=$mes1'&'year=$anio1 
+
+#va con el mes anterior al cumes
+wget -O Pluma_PronoENSO_MesAnterior.png https://ensoforecast.iri.columbia.edu/cgi-bin/sst_table_img?month=$mes2'&'year=$anio2
+
 
 #Imagen Prono IOD (fija)
 ## PROBANDO ##
