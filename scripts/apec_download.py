@@ -15,6 +15,10 @@ def Download(season, anio, descarga):
          link_prono_enso = (f'https://www.apcc21.org/apcc_images/MME_FIG/ENSO_OUT/'
                       f'{season}/{anio}/Probability/Prob_ENSO_Probability.png')
          os.system('wget --no-cache -O PronoENSO_APEC.png ' + link_prono_enso)
+    elif descarga=='ENSO-Plume':
+         link_prono_enso = (f'https://www.apcc21.org/apcc_images/MME_FIG/ENSO_OUT/'
+                      f'{season}/{anio}/Timeseries/sst_Nino3.4.png')
+         os.system('wget --no-cache -O Pluma_PronoENSO_APEC.png ' + link_prono_enso)
     elif descarga=='IOD':
           link_prono_iod = (f"https://www.apcc21.org/apcc_images/MME_FIG/ENSO_OUT/"
                             f"{season}/{anio}/Timeseries/sst_IOD.png")
@@ -39,9 +43,9 @@ except:
      season = ''.join(meses[cumes-1:cumes-1+6])
      Download(season, anio, descarga='Flechita')
 
-descargas = ['ENSO', 'IOD']
+descargas = ['ENSO','ENSO-Plume', 'IOD']
 
-for d in  ['ENSO', 'IOD']:
+for d in  ['ENSO', 'ENSO-Plume', 'IOD']:
      try:
           season = ''.join(meses[cumes:cumes+6])
           Download(season, anio, d)
