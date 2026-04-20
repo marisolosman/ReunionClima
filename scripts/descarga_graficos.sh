@@ -161,19 +161,21 @@ mv psi_plumb_01$mes3$anio3-${dfm3}$mes3$anio3.png Plumb_M3.png
 # Necesitamos anomalía mensual (Precip_SSA_M3.png) y trimestral (Precip_SSA_Trim.png)
 
 #Generamos flujos de Plumb (con anomalía de geopotencial 200hPa)
-python $enlace"calculo_waf_z200.py" --dateinit "$anio1-$mes1-01" --dateend "$anio3-$mes3-$dfm3"
+echo "==============================PROBANDO NUEVO CODIGO ============================="
+python $enlace"calculo_waf_z200_ncep_gdas.py" --dateinit "$anio1-$mes1-01" --dateend "$anio3-$mes3-$dfm3"
 mv Z_plumb_01$mes1$anio1-${dfm3}$mes3$anio3.png Z_Plumb_Trim.png
-python $enlace"calculo_waf_z200.py" --dateinit "$anio1-$mes1-01" --dateend "$anio1-$mes1-$dfm1"
+python $enlace"calculo_waf_z200_ncep_gdas.py" --dateinit "$anio1-$mes1-01" --dateend "$anio1-$mes1-$dfm1"
 mv Z_plumb_01$mes1$anio1-${dfm1}$mes1$anio1.png Z_Plumb_M1.png
-python $enlace"calculo_waf_z200.py" --dateinit "$anio2-$mes2-01" --dateend "$anio2-$mes2-$dfm2"
+python $enlace"calculo_waf_z200_ncep_gdas.py" --dateinit "$anio2-$mes2-01" --dateend "$anio2-$mes2-$dfm2"
 mv Z_plumb_01$mes2$anio2-${dfm2}$mes2$anio2.png Z_Plumb_M2.png
-python $enlace"calculo_waf_z200.py" --dateinit "$anio3-$mes3-01" --dateend "$anio3-$mes3-$dfm3"
+python $enlace"calculo_waf_z200_ncep_gdas.py" --dateinit "$anio3-$mes3-01" --dateend "$anio3-$mes3-$dfm3"
 mv Z_plumb_01$mes3$anio3-${dfm3}$mes3$anio3.png Z_Plumb_M3.png
 
 #anomalia geop 1000 hPa
-python $enlace"anom_var.py" --dateinit "$anio3-$mes3-01" --dateend "$anio3-$mes3-$dfm3" --variable "Zg" --level "1000mb" --latmin "-80" --latmax "0" --lonmin "0" --lonmax "359" --levcont "90" --levint "20" 
+python $enlace"anom_var_ncep_gdas.py" --dateinit "$anio3-$mes3-01" --dateend "$anio3-$mes3-$dfm3" --variable "Zg" --level "1000mb" --latmin "-80" --latmax "0" --lonmin "0" --lonmax "359" --levcont "90" --levint "20" 
 mv Anomhgt_1000mb_01${mes3}${anio3}_${dfm3}${mes3}${anio3}_-80_0_0_359.jpg zg1000_M3.jpg 
 
+echo "===========FIN============"
 #Imagen Anomalía Z500 mensual
 python $enlace"anom_var_stereo.py" --dateinit "$anio1-$mes1-01" --dateend "$anio1-$mes1-$dfm1" --variable "Zg" --level "500mb" --latr "-20" --levcont "120" --levint "30"  
 mv Anomhgt_500mb_01${mes1}${anio1}_${dfm1}${mes1}${anio1}_-20.jpg zg500_M1.jpg
