@@ -177,11 +177,11 @@ mv Anomhgt_1000mb_01${mes3}${anio3}_${dfm3}${mes3}${anio3}_-80_0_0_359.jpg zg100
 
 echo "===========FIN============"
 #Imagen Anomalía Z500 mensual
-python $enlace"anom_var_stereo.py" --dateinit "$anio1-$mes1-01" --dateend "$anio1-$mes1-$dfm1" --variable "Zg" --level "500mb" --latr "-20" --levcont "120" --levint "30"  
+python $enlace"anom_var_ncep_gdas_stereo.py" --dateinit "$anio1-$mes1-01" --dateend "$anio1-$mes1-$dfm1" --variable "Zg" --level "500mb" --latmin "-20" --levcont "120" --levint "30"  
 mv Anomhgt_500mb_01${mes1}${anio1}_${dfm1}${mes1}${anio1}_-20.jpg zg500_M1.jpg
-python $enlace"anom_var_stereo.py" --dateinit "$anio2-$mes2-01" --dateend "$anio2-$mes2-$dfm2" --variable "Zg" --level "500mb" --latr "-20" --levcont "120" --levint "30" 
+python $enlace"anom_var_ncep_gdas_stereo.py" --dateinit "$anio2-$mes2-01" --dateend "$anio2-$mes2-$dfm2" --variable "Zg" --level "500mb" --latmin "-20" --levcont "120" --levint "30" 
 mv Anomhgt_500mb_01${mes2}${anio2}_${dfm2}${mes2}${anio2}_-20.jpg zg500_M2.jpg 
-python $enlace"anom_var_stereo.py" --dateinit "$anio3-$mes3-01" --dateend "$anio3-$mes3-$dfm3" --variable "Zg" --level "500mb" --latr "-20" --levcont "120" --levint "30"  
+python $enlace"anom_var_ncep_gdas_stereo.py" --dateinit "$anio3-$mes3-01" --dateend "$anio3-$mes3-$dfm3" --variable "Zg" --level "500mb" --latmin "-20" --levcont "120" --levint "30"  
 mv Anomhgt_500mb_01${mes3}${anio3}_${dfm3}${mes3}${anio3}_-20.jpg zg500_M3.jpg
 
 #Persistencia Anomalías geopotencial
